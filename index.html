@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MelloxFoxy | AI-Driven Icon on Solana</title>
+    <meta name="description" content="MelloxFoxy - An AI-created nine-tailed fox born from Grok AI, built for community, creativity, and Solana-powered innovation.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --primary-red: #ff3b3b;
+            --ice-blue: #4cc9f0;
+            --deep-blue: #0a0e27;
+            --charcoal: #1a1d2e;
+            --soft-white: #f8f9fa;
+            --glow-red: rgba(255, 59, 59, 0.3);
+            --glow-blue: rgba(76, 201, 240, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Syne', sans-serif;
+            background: var(--deep-blue);
+            color: var(--soft-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Animated Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(30deg, var(--ice-blue) 12%, transparent 12.5%, transparent 87%, var(--ice-blue) 87.5%, var(--ice-blue)),
+                linear-gradient(150deg, var(--ice-blue) 12%, transparent 12.5%, transparent 87%, var(--ice-blue) 87.5%, var(--ice-blue)),
+                linear-gradient(30deg, var(--ice-blue) 12%, transparent 12.5%, transparent 87%, var(--ice-blue) 87.5%, var(--ice-blue)),
+                linear-gradient(150deg, var(--ice-blue) 12%, transparent 12.5%, transparent 87%, var(--ice-blue) 87.5%, var(--ice-blue));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+            animation: patternShift 60s linear infinite;
+        }
+        
+        @keyframes patternShift {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(140px); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(76, 201, 240, 0.1);
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-red), var(--ice-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--soft-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--ice-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-red), #ff6b6b);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--glow-red);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px var(--glow-red);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 4rem;
+            overflow: hidden;
+        }
+        
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--glow-blue), transparent 70%);
+            top: 10%;
+            right: -10%;
+            animation: pulse 8s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        .hero-glow-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--glow-red), transparent 70%);
+            bottom: 10%;
+            left: -10%;
+            animation: pulse 10s ease-in-out infinite reverse;
+            z-index: 1;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--soft-white), var(--ice-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(248, 249, 250, 0.8);
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+        
+        .btn-primary {
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary-red), #ff6b6b);
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px var(--glow-red);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px var(--glow-red);
+        }
+        
+        .btn-secondary {
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid var(--ice-blue);
+            border-radius: 50px;
+            color: var(--ice-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--ice-blue);
+            color: var(--deep-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--glow-blue);
+        }
+        
+        .solana-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            background: rgba(76, 201, 240, 0.1);
+            border: 1px solid var(--ice-blue);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--ice-blue);
+            animation: fadeInUp 0.8s ease-out 0.8s backwards;
+        }
+        
+        .solana-badge::before {
+            content: '⚡';
+            font-size: 1.2rem;
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 1s ease-out 0.4s backwards;
+        }
+        
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .fox-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .fox-image {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(76, 201, 240, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(26, 29, 46, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(76, 201, 240, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            transition: all 0.4s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(76, 201, 240, 0.4);
+            box-shadow: 0 15px 40px rgba(76, 201, 240, 0.2);
+        }
+        
+        /* Section Styling */
+        section {
+            position: relative;
+            padding: 6rem 5%;
+            z-index: 2;
+        }
+        
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--soft-white), var(--ice-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: rgba(248, 249, 250, 0.7);
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            padding: 2.5rem;
+            background: rgba(26, 29, 46, 0.5);
+            border: 1px solid rgba(76, 201, 240, 0.2);
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 59, 59, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--ice-blue);
+        }
+        
+        /* Roadmap */
+        .roadmap-container {
+            position: relative;
+            padding: 3rem 0;
+        }
+        
+        .roadmap-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--ice-blue), var(--primary-red));
+            transform: translateX(-50%);
+        }
+        
+        .phase {
+            position: relative;
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .phase:nth-child(even) .phase-content {
+            order: 2;
+        }
+        
+        .phase-content {
+            padding: 2rem;
+            background: rgba(26, 29, 46, 0.8);
+            border: 2px solid var(--ice-blue);
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+        
+        .phase-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px var(--glow-blue);
+        }
+        
+        .phase-number {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: linear-gradient(135deg, var(--primary-red), var(--ice-blue));
+            border-radius: 50px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .phase-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--ice-blue);
+        }
+        
+        .phase-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .phase-content li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .phase-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+        
+        /* Why Section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .why-card {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 59, 59, 0.1), rgba(76, 201, 240, 0.1));
+            border: 1px solid rgba(76, 201, 240, 0.3);
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+        
+        .why-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(76, 201, 240, 0.3);
+        }
+        
+        .why-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-red);
+        }
+        
+        /* Partners Section */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .partner-card {
+            aspect-ratio: 1;
+            background: rgba(26, 29, 46, 0.6);
+            border: 2px dashed rgba(76, 201, 240, 0.3);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: rgba(248, 249, 250, 0.5);
+            transition: all 0.4s ease;
+        }
+        
+        .partner-card:hover {
+            border-style: solid;
+            border-color: var(--ice-blue);
+            background: rgba(76, 201, 240, 0.1);
+        }
+        
+        /* Community CTA */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(255, 59, 59, 0.1), rgba(76, 201, 240, 0.1));
+            border: 2px solid var(--ice-blue);
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(76, 201, 240, 0.1), transparent);
+            animation: shine 3s linear infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+        
+        .cta-section h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(248, 249, 250, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .social-btn {
+            padding: 1rem 2rem;
+            background: rgba(26, 29, 46, 0.9);
+            border: 2px solid var(--ice-blue);
+            border-radius: 50px;
+            color: var(--soft-white);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            background: var(--ice-blue);
+            color: var(--deep-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px var(--glow-blue);
+        }
+        
+        .launching-banner {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-red), #ff6b6b);
+            border-radius: 50px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px var(--glow-red); }
+            50% { box-shadow: 0 0 40px var(--glow-red); }
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.9);
+            border-top: 1px solid rgba(76, 201, 240, 0.2);
+            padding: 3rem 5%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-red), var(--ice-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--soft-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--ice-blue);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(76, 201, 240, 0.1);
+            border: 1px solid var(--ice-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ice-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: var(--ice-blue);
+            color: var(--deep-blue);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .phase {
+                grid-template-columns: 1fr;
+            }
+            
+            .phase:nth-child(even) .phase-content {
+                order: unset;
+            }
+            
+            .roadmap-line {
+                left: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-text p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+            
+            .cta-section {
+                padding: 2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .social-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">MelloxFoxy</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#why">Why Us</a>
+                <a href="#community">Community</a>
+                <button class="nav-cta" onclick="window.open('https://t.me/melloxfoxy', '_blank')">Join Now</button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-glow-2"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Meet MelloxFoxy — Solana's AI-Driven Digital Icon</h1>
+                <p>An AI-created nine-tailed fox born from Grok AI — built for community, creativity, and Solana-powered innovation.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="window.open('https://t.me/melloxfoxy', '_blank')">Join the Community</button>
+                    <button class="btn-secondary" onclick="window.open('https://x.com/Melloxfoxy28', '_blank')">Follow on X</button>
+                </div>
+                <div class="solana-badge">Built on Solana</div>
+            </div>
+            <div class="hero-visual">
+                <div class="fox-container">
+                    <img src="/mnt/user-data/uploads/1001921641.jpg" alt="MelloxFoxy" class="fox-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About / Vision Section -->
+    <section id="about">
+        <div class="section-container">
+            <h2 class="section-title fade-in">The Vision</h2>
+            <p class="section-subtitle fade-in">MelloxFoxy represents the fusion of AI creativity and blockchain innovation. Born from Grok AI, our nine-tailed fox mascot symbolizes wisdom, agility, and boundless potential in the Web3 ecosystem.</p>
+            
+            <div class="about-grid">
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Generated Origin</h3>
+                    <p>Created using Grok AI, xAI's flagship model, MelloxFoxy embodies cutting-edge artificial intelligence and creative innovation.</p>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Solana-Powered</h3>
+                    <p>Built on the fastest blockchain, leveraging Solana's speed, scalability, and minimal transaction costs for seamless experiences.</p>
+                </div>
+                
+                <div class="glass-card fade-in">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Community-Centric</h3>
+                    <p>Driven by a passionate global community, creating a decentralized ecosystem where creativity and collaboration thrive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Roadmap Section -->
+    <section id="roadmap">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Growth Roadmap</h2>
+            <p class="section-subtitle fade-in">Our strategic journey to building the most innovative AI-driven project on Solana</p>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-line"></div>
+                
+                <div class="phase fade-in">
+                    <div class="phase-content">
+                        <span class="phase-number">Phase 1</span>
+                        <h3>Foundation & Launch</h3>
+                        <ul>
+                            <li>Solana mainnet launch</li>
+                            <li>Community building & social growth</li>
+                            <li>Strategic partnerships initiation</li>
+                            <li>Brand awareness campaign</li>
+                        </ul>
+                    </div>
+                    <div></div>
+                </div>
+                
+                <div class="phase fade-in">
+                    <div></div>
+                    <div class="phase-content">
+                        <span class="phase-number">Phase 2</span>
+                        <h3>Expansion & Partnerships</h3>
+                        <ul>
+                            <li>Cross-chain creator collaborations</li>
+                            <li>Major exchange listings</li>
+                            <li>NFT collection launch</li>
+                            <li>Community governance implementation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="phase fade-in">
+                    <div class="phase-content">
+                        <span class="phase-number">Phase 3</span>
+                        <h3>Innovation & Utility</h3>
+                        <ul>
+                            <li>AI-powered interactive experiences</li>
+                            <li>Custom tools & utilities for holders</li>
+                            <li>GameFi integration</li>
+                            <li>Ecosystem expansion</li>
+                        </ul>
+                    </div>
+                    <div></div>
+                </div>
+                
+                <div class="phase fade-in">
+                    <div></div>
+                    <div class="phase-content">
+                        <span class="phase-number">Phase 4</span>
+                        <h3>Long-Term Evolution</h3>
+                        <ul>
+                            <li>Metaverse presence & experiences</li>
+                            <li>DAO implementation for community governance</li>
+                            <li>Global brand recognition</li>
+                            <li>Continuous innovation & development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why MelloxFoxy + Solana -->
+    <section id="why">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Why MelloxFoxy + Solana</h2>
+            <p class="section-subtitle fade-in">The perfect synergy of AI creativity, Web3 utility, and blockchain performance</p>
+            
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <h3>🎨 AI Creativity</h3>
+                    <p>Harness the power of Grok AI to create unique, engaging experiences that push the boundaries of digital art and storytelling.</p>
+                </div>
+                
+                <div class="why-card fade-in">
+                    <h3>⚡ Solana Speed</h3>
+                    <p>Lightning-fast transactions and minimal fees on the world's most performant blockchain, ensuring seamless user experiences.</p>
+                </div>
+                
+                <div class="why-card fade-in">
+                    <h3>🌟 Community First</h3>
+                    <p>Built by the community, for the community. Every decision prioritizes our members and collective growth.</p>
+                </div>
+                
+                <div class="why-card fade-in">
+                    <h3>🚀 Innovation Drive</h3>
+                    <p>Constantly evolving with cutting-edge technology, from AI integrations to DeFi utilities and beyond.</p>
+                </div>
+                
+                <div class="why-card fade-in">
+                    <h3>🔒 Security</h3>
+                    <p>Built on Solana's robust infrastructure with smart contract audits and transparent development practices.</p>
+                </div>
+                
+                <div class="why-card fade-in">
+                    <h3>💎 Real Utility</h3>
+                    <p>Not just another token — MelloxFoxy delivers tangible value through NFTs, governance, and exclusive experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners Section -->
+    <section id="partners">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Future Collaborations</h2>
+            <p class="section-subtitle fade-in">Building strategic partnerships across the Web3 ecosystem</p>
+            
+            <div class="partners-grid">
+                <div class="partner-card fade-in">Coming Soon</div>
+                <div class="partner-card fade-in">Coming Soon</div>
+                <div class="partner-card fade-in">Coming Soon</div>
+                <div class="partner-card fade-in">Coming Soon</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Community CTA -->
+    <section id="community">
+        <div class="section-container">
+            <div class="cta-section fade-in">
+                <h2>Join the Revolution</h2>
+                <p>Be part of the first AI-driven icon on Solana. Shape the future with us.</p>
+                <div class="cta-buttons">
+                    <a href="https://t.me/melloxfoxy" target="_blank" class="social-btn">
+                        📱 Telegram Community
+                    </a>
+                    <a href="https://x.com/Melloxfoxy28" target="_blank" class="social-btn">
+                        🐦 Follow on X
+                    </a>
+                </div>
+                <div class="launching-banner">⚡ Launching on Solana</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">MelloxFoxy</div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#why">Why Us</a>
+                <a href="#community">Community</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://t.me/melloxfoxy" target="_blank" class="social-icon" title="Telegram">
+                    📱
+                </a>
+                <a href="https://x.com/Melloxfoxy28" target="_blank" class="social-icon" title="X (Twitter)">
+                    🐦
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Parallax effect for hero glows
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroGlow = document.querySelector('.hero-glow');
+            const heroGlow2 = document.querySelector('.hero-glow-2');
+            
+            if (heroGlow && heroGlow2) {
+                heroGlow.style.transform = `translateY(${scrolled * 0.3}px)`;
+                heroGlow2.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
+        
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
